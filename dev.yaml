@@ -42,7 +42,7 @@ spec:
   selector:
     matchLabels:
       app: will
-  replicas: 1
+  replicas: test
   template:
     metadata:
       labels:
