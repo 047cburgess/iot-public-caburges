@@ -38,9 +38,13 @@ kind: Endpoints
 metadata:
   name: whatami
   namespace: dev
+spec:
+  selector:
+    matchLabels:
+      app: will
 subsets:
 - addresses:
-  - ip: 10.42.0.18
+  - ip: 10.42.0.181
     nodeName: k3d-p3-server-0
     targetRef:
       kind: Pod
@@ -49,11 +53,6 @@ subsets:
       uid: 8688703d-3109-496b-ba84-b7656171208e
   - ip: 10.42.0.19
     nodeName: k3d-p3-server-0
-    targetRef:
-      kind: Pod
-      name: will-c48dfb996-pmqnb
-      namespace: dev
-      uid: c3bdf355-4d8f-44e0-9802-3af4f9011123
   - ip: 10.42.0.20
     nodeName: k3d-p3-server-0
     targetRef:
