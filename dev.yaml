@@ -33,38 +33,6 @@ spec:
     app: will # Select pods with this label
 
 ---
-apiVersion: v1
-kind: Endpoints
-metadata:
-  name: whatami
-  namespace: dev
-spec:
-  selector:
-    matchLabels:
-      app: will
-subsets:
-- addresses:
-  - ip: 10.42.0.181
-    nodeName: k3d-p3-server-0
-    targetRef:
-      kind: Pod
-      name: will-c48dfb996-j5q48
-      namespace: dev
-      uid: 8688703d-3109-496b-ba84-b7656171208e
-  - ip: 10.42.0.19
-    nodeName: k3d-p3-server-0
-  - ip: 10.42.0.20
-    nodeName: k3d-p3-server-0
-    targetRef:
-      kind: Pod
-      name: will-c48dfb996-t75ql
-      namespace: dev
-      uid: 80996cfe-aefb-4e22-adf9-330875285d84
-  ports:
-  - port: 8888
-    protocol: TCP
-
----
 apiVersion: apps/v1
 kind: Deployment
 metadata:
