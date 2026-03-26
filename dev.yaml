@@ -50,6 +50,6 @@ spec:
     spec:
       containers:
       - name: will
-        image: wil42/playground:v2
+        image: wil42/playground:v9
         ports:
         - containerPort: 8888
